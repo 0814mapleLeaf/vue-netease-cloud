@@ -29,7 +29,13 @@
 
 <script>
     export default {
-        name: "HeaderCom"
+        name: "HeaderCom",
+        data() {
+            return {}
+        },
+        setup(){
+
+        },
     }
 </script>
 
