@@ -1,10 +1,15 @@
 <template>
-    
+    <HeaderCom></HeaderCom>
 </template>
 
 <script>
+    import HeaderCom from "@/components/header/HeaderCom";
+
     export default {
-        name: "YunCunView"
+        name: "YunCunView",
+        components: {
+            HeaderCom
+        }
     }
 </script>
 

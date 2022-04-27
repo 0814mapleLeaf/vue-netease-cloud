@@ -29,7 +29,7 @@
             // 通过axios像后端要数据，其中包括swiiper中图片路径，把图片路径修改this.imgs
             this.getBannerImgs()
         },
-        mounted() {
+        updated() {
 
 
             //以下代码，要操作dom

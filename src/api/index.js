@@ -16,8 +16,16 @@ export function getBanner(type = 0) {//    type:指定参数默认值的第四�
     return axios.get(`${baseUrl}/banner?type=${type}`)//字符串拼接用模板字符串
 }
 
+
+//获取歌单
 export function getMusicList(limit = 10) {
     return axios.get(`${baseUrl}/personalized?limit=${limit}`)
+
+}
+
+
+export function getPlayListDetail(id) {
+    return axios.get(`${baseUrl}/playlist/detail?id=${id}`)
 
 }
 

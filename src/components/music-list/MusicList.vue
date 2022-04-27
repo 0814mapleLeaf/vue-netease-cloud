@@ -6,9 +6,11 @@
     <div class="swiper-container swiper-music-list">
         <div class="swiper-wrapper">
             <div class="swiper-slide" v-for="item in musicList">
-                <img :src="item.picUrl" alt="">
-                <span>{{item.playCount}}</span>
-                <p>{{item.name}}</p>
+                <router-link :to="{path:'/list-view',query:{id:item.id}}">
+                    <img :src="item.picUrl" alt="">
+                    <span>{{item.playCount>100000000?(item.playCount/100000000).toFixed(2)+'亿':(item.playCount/10000).toFixed(2)+'万'}}</span>
+                    <p>{{item.name}}</p>
+                </router-link>
             </div>
         </div>
     </div>
@@ -26,7 +28,10 @@
                 musicList: []
             }
         },
-        mounted() {
+        created() {
+            this.getMusicListData()
+        },
+        updated() {
             const mySwiper = new Swiper('.swiper-music-list', {
                 slidesPerView: 3,
                 spaceBetween: 20,
